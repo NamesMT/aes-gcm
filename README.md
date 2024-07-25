@@ -1,4 +1,4 @@
-# starter-ts ![TypeScript heart icon](https://img.shields.io/badge/♡-%23007ACC.svg?logo=typescript&logoColor=white)
+# @namesmt/aes-gcm ![TypeScript heart icon](https://img.shields.io/badge/♡-%23007ACC.svg?logo=typescript&logoColor=white)
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -6,20 +6,7 @@
 [![Bundlejs][bundlejs-src]][bundlejs-href]
 [![jsDocs.io][jsDocs-src]][jsDocs-href]
 
-**starter-ts** is my starter/boilerplate for typescript projects.  
-This template assumes you are using Linux, or the included Dev Container.
-
-### Notes (remove this section when you use the template)
-#### * Do a global replace for `starter-ts` and `NamesMT`
-
-#### * Notable behavior:
-- [antfu/eslint-config](https://github.com/antfu/eslint-config)
-  - Style error silencing is commented out
-
-#### * Script: `play` vs `play:useBuild` for playground testing?
-- `play` script uses `unbuild`'s [passive watcher (stub mode)](https://github.com/unjs/unbuild#-passive-watcher), which allows you to execute new code **live** without rebuilding the project. The cons is TS declarations are not available.
-- `play:useBuild` builds a static version of the package, useful for testing the actual look/behavior when shipping.
-### END NOTE
+**@namesmt/aes-gcm** is a dead simple, modern, cross-platform AES-GCM encryption util package.  
 
 ## Features
 - [x] TypeScript ready!
@@ -28,19 +15,24 @@ This template assumes you are using Linux, or the included Dev Container.
 ### Install package:
 ```sh
 # npm
-npm install starter-ts
+npm install @namesmt/aes-gcm
 
 # yarn
-yarn add starter-ts
+yarn add @namesmt/aes-gcm
 
 # pnpm (recommended)
-pnpm install starter-ts
+pnpm install @namesmt/aes-gcm
 ```
 
 ### Import:
 ```ts
 // ESM
-import { hello } from 'starter-ts'
+import { decrypt, encrypt } from '@namesmt/aes-gcm'
+
+const plaintext = 'Hello, world!'
+const password = 'pw'
+const encrypted = await encrypt(plaintext, password)
+const decrypted = await decrypt(encrypted, password)
 ```
 
 ## Roadmap
@@ -53,15 +45,15 @@ import { hello } from 'starter-ts'
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/starter-ts?labelColor=18181B&color=F0DB4F
-[npm-version-href]: https://npmjs.com/package/starter-ts
-[npm-downloads-src]: https://img.shields.io/npm/dm/starter-ts?labelColor=18181B&color=F0DB4F
-[npm-downloads-href]: https://npmjs.com/package/starter-ts
-[codecov-src]: https://img.shields.io/codecov/c/gh/namesmt/starter-ts/main?labelColor=18181B&color=F0DB4F
-[codecov-href]: https://codecov.io/gh/namesmt/starter-ts
-[license-src]: https://img.shields.io/github/license/namesmt/starter-ts.svg?labelColor=18181B&color=F0DB4F
-[license-href]: https://github.com/namesmt/starter-ts/blob/main/LICENSE
-[bundlejs-src]: https://img.shields.io/bundlejs/size/starter-ts?labelColor=18181B&color=F0DB4F
-[bundlejs-href]: https://bundlejs.com/?q=starter-ts
+[npm-version-src]: https://img.shields.io/npm/v/@namesmt/aes-gcm?labelColor=18181B&color=F0DB4F
+[npm-version-href]: https://npmjs.com/package/@namesmt/aes-gcm
+[npm-downloads-src]: https://img.shields.io/npm/dm/@namesmt/aes-gcm?labelColor=18181B&color=F0DB4F
+[npm-downloads-href]: https://npmjs.com/package/@namesmt/aes-gcm
+[codecov-src]: https://img.shields.io/codecov/c/gh/namesmt/aes-gcm/main?labelColor=18181B&color=F0DB4F
+[codecov-href]: https://codecov.io/gh/namesmt/aes-gcm
+[license-src]: https://img.shields.io/github/license/namesmt/aes-gcm.svg?labelColor=18181B&color=F0DB4F
+[license-href]: https://github.com/namesmt/aes-gcm/blob/main/LICENSE
+[bundlejs-src]: https://img.shields.io/bundlejs/size/@namesmt/aes-gcm?labelColor=18181B&color=F0DB4F
+[bundlejs-href]: https://bundlejs.com/?q=@namesmt/aes-gcm
 [jsDocs-src]: https://img.shields.io/badge/Check_out-jsDocs.io---?labelColor=18181B&color=F0DB4F
-[jsDocs-href]: https://www.jsdocs.io/package/starter-ts
+[jsDocs-href]: https://www.jsdocs.io/package/@namesmt/aes-gcm

@@ -11,6 +11,10 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      uint8array-extras:
+        specifier: ^1.4.0
+        version: 1.4.0
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.23.2
@@ -24,9 +28,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^2.0.4
         version: 2.0.4(vitest@2.0.4(@types/node@20.14.12))
-      consola:
-        specifier: ^3.2.3
-        version: 3.2.3
       eslint:
         specifier: ^9.7.0
         version: 9.7.0
@@ -36,9 +37,6 @@ importers:
       simple-git-hooks:
         specifier: ^2.11.1
         version: 2.11.1
-      std-env:
-        specifier: ^3.7.0
-        version: 3.7.0
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
@@ -54,12 +52,12 @@ importers:
 
   playground:
     devDependencies:
+      '@namesmt/aes-gcm':
+        specifier: workspace:^
+        version: link:..
       nodemon:
         specifier: ^3.1.4
         version: 3.1.4
-      starter-ts:
-        specifier: workspace:^
-        version: link:..
       vite:
         specifier: ^5.3.4
         version: 5.3.4(@types/node@20.14.12)
@@ -2740,6 +2738,10 @@ packages:
 
   ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
+
+  uint8array-extras@1.4.0:
+    resolution: {integrity: sha512-ZPtzy0hu4cZjv3z5NW9gfKnNLjoz4y6uv4HlelAjDK7sY/xOkKZv9xK/WQpcsBB3jEybChz9DPC2U/+cusjJVQ==}
+    engines: {node: '>=18'}
 
   unbuild@2.0.0:
     resolution: {integrity: sha512-JWCUYx3Oxdzvw2J9kTAp+DKE8df/BnH/JTSj6JyA4SH40ECdFu7FoJJcrm8G92B7TjofQ6GZGjJs50TRxoH6Wg==}
@@ -5651,6 +5653,8 @@ snapshots:
   typescript@5.5.4: {}
 
   ufo@1.5.3: {}
+
+  uint8array-extras@1.4.0: {}
 
   unbuild@2.0.0(typescript@5.5.4):
     dependencies:

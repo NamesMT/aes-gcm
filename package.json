@@ -13,7 +13,16 @@
     "url": "git+https://github.com/namesmt/aes-gcm.git"
   },
   "bugs": "https://github.com/namesmt/aes-gcm/issues",
-  "keywords": [],
+  "keywords": [
+    "AES",
+    "GCM",
+    "AES-GCM",
+    "crypto",
+    "encrypt",
+    "encryption",
+    "decrypt",
+    "decryption"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {

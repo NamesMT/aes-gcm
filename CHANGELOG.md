@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/namesmt/aes-gcm/compare/v0.1.1...v0.1.2)
+
+### 📦 Build
+
+- Fix build error because of alias ([ac566d5](https://github.com/namesmt/aes-gcm/commit/ac566d5))
+
+### 🏡 Chore
+
+- Add keywords ([a40765c](https://github.com/namesmt/aes-gcm/commit/a40765c))
+- Update deps ([91ab8a7](https://github.com/namesmt/aes-gcm/commit/91ab8a7))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](http://github.com/NamesMT))
+
 ## v0.1.1
 
 

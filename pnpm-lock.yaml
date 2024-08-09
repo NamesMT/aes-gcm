@@ -5,8 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  hasown: npm:@nolyfill/hasown@^1
-  is-core-module: npm:@nolyfill/is-core-module@^1
+  hasown: npm:@nolyfill/hasown@^1.0.29
+  is-core-module: npm:@nolyfill/is-core-module@^1.0.39
 
 importers:
 
@@ -733,8 +733,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nolyfill/is-core-module@1.0.32':
-    resolution: {integrity: sha512-xmhh+wwmaCtNjY7slRZ/U+/NGjPii1dfKyYCv8iHofIbMkXFLyZTpdsIoiGbtf/JQRfQuwlohZ6B/sb2CrQbFw==}
+  '@nolyfill/is-core-module@1.0.39':
+    resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
   '@pkgjs/parseargs@0.11.0':
@@ -3563,7 +3563,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nolyfill/is-core-module@1.0.32': {}
+  '@nolyfill/is-core-module@1.0.39': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -4424,7 +4424,7 @@ snapshots:
   eslint-import-resolver-node@0.3.9:
     dependencies:
       debug: 3.2.7
-      is-core-module: '@nolyfill/is-core-module@1.0.32'
+      is-core-module: '@nolyfill/is-core-module@1.0.39'
       resolve: 1.22.8
     transitivePeerDependencies:
       - supports-color
@@ -5571,7 +5571,7 @@ snapshots:
 
   resolve@1.22.8:
     dependencies:
-      is-core-module: '@nolyfill/is-core-module@1.0.32'
+      is-core-module: '@nolyfill/is-core-module@1.0.39'
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 

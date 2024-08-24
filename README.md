@@ -6,7 +6,7 @@
 [![Bundlejs][bundlejs-src]][bundlejs-href]
 [![jsDocs.io][jsDocs-src]][jsDocs-href]
 
-**@namesmt/aes-gcm** is a dead simple, modern, cross-platform AES-GCM encryption util package.  
+**@namesmt/aes-gcm** is a dead simple cross-platform AES-GCM encryption util package.  
 
 ## Features
 - [x] TypeScript ready!
@@ -37,11 +37,10 @@ const decrypted = await decrypt(encrypted, password)
 
 ## Roadmap
 
-- [x] Setting up Dev Container
 - [ ] Become the legendary 10000x developer
 
 ## License [![License][license-src]][license-href]
-[MIT](./LICENSE) License © 2023 [NamesMT](https://github.com/NamesMT)
+[MIT](./LICENSE) License © 2024 [NamesMT](https://github.com/NamesMT)
 
 <!-- Badges -->
 

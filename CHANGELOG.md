@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.3
+
+[compare changes](https://github.com/namesmt/aes-gcm/compare/v0.1.2...v0.1.3)
+
+### 🏡 Chore
+
+- Housekeeping ([33c28c5](https://github.com/namesmt/aes-gcm/commit/33c28c5))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](http://github.com/NamesMT))
+
 ## v0.1.2
 
 [compare changes](https://github.com/namesmt/aes-gcm/compare/v0.1.1...v0.1.2)

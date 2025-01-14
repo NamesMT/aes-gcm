@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/namesmt/aes-gcm/compare/v0.1.3...v1.0.0)
+
+### 🚀 Enhancements
+
+- Support buffer input/output ([30dc007](https://github.com/namesmt/aes-gcm/commit/30dc007))
+
+### 🏡 Chore
+
+- Update deps ([1612150](https://github.com/namesmt/aes-gcm/commit/1612150))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](http://github.com/NamesMT))
+
 ## v0.1.3
 
 [compare changes](https://github.com/namesmt/aes-gcm/compare/v0.1.2...v0.1.3)

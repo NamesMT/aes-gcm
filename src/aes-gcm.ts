@@ -1,25 +1,30 @@
+import type { BufferSource } from 'node:stream/web'
 import { base64ToUint8Array, stringToUint8Array, toUint8Array, uint8ArrayToBase64 } from 'uint8array-extras'
 
-// ### Based on: https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a?permalink_comment_id=4475767#gistcomment-4475767
+function toBufferSource(content: string | BufferSource): BufferSource {
+  return typeof content === 'string' // encode content to BufferSource if needed
+    ? stringToUint8Array(content)
+    : content
+}
+
 export const SEPARATOR = '|'
 /**
- * Encrypts plaintext using AES-GCM with supplied password, for decryption with decrypt().
- *                                                                      (c) Chris Veness MIT Licence
+ * Encrypts content using AES-GCM with supplied password, for decryption with decrypt().  
+ * (c) enhanced from https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a
  *
- * @param   {string} plaintext - Plaintext to be encrypted.
- * @param   {string} password - Password to use to encrypt plaintext.
- * @returns {string} Encrypted ciphertext.
+ * @param   {string} content - content to be encrypted.
+ * @param   {string} password - Password to use to encrypt content.
+ * @returns {string} Encrypted result (iv and ciphertext concatenated).
  *
  * @example
- *   const ciphertext = await encrypt('my secret text', 'pw');
- *   encrypt('my secret text', 'pw').then(function(ciphertext) { console.log(ciphertext); });
+ *   const encrypted = await encrypt('my secret text', 'pw');
+ *   encrypt('my secret text', 'pw').then(function(encrypted) { console.log(encrypted); });
  */
 export async function encrypt(
-  plaintext: string,
-  password: string,
+  content: string | BufferSource,
+  password: string | BufferSource,
 ): Promise<string> {
-  const pwUtf8 = stringToUint8Array(password) // encode password as UTF-8
-  const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8) // hash the password
+  const pwHash = await crypto.subtle.digest('SHA-256', toBufferSource(password)) // hash the password
 
   const ivUtf8 = crypto.getRandomValues(new Uint8Array(12)) // get 96-bit random iv
   const ivB64 = uint8ArrayToBase64(ivUtf8) // iv as base64 string
@@ -30,43 +35,56 @@ export async function encrypt(
     'encrypt',
   ]) // generate key from pw
 
-  const ptUtf8 = stringToUint8Array(plaintext) // encode plaintext as UTF-8
-  const ctBuffer = await crypto.subtle.encrypt(alg, key, ptUtf8) // encrypt plaintext using key
+  const ctBuffer = await crypto.subtle.encrypt(alg, key, toBufferSource(content)) // encrypt content using key
   const ctB64 = uint8ArrayToBase64(toUint8Array(ctBuffer)) // ciphertext as base64 string
 
   return `${ivB64}${SEPARATOR}${ctB64}`
 }
 
 /**
- * Decrypts ciphertext encrypted with encrypt() using supplied password.
- *                                                                      (c) Chris Veness MIT Licence
+ * Decrypts encrypted result from encrypt() using supplied password.  
+ * (c) enhanced from https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a
  *
- * @param   {string} ciphertext - Ciphertext to be decrypted.
- * @param   {string} password - Password to use to decrypt ciphertext.
+ * @param   {string} encryptedInput - encrypted value to be decrypted.
+ * @param   {string} password - Password to use to decrypt encryptedInput.
  * @returns {string} Decrypted plaintext.
  *
  * @example
  *   const plaintext = await decrypt(ciphertext, 'pw');
  *   decrypt(ciphertext, 'pw').then(function(plaintext) { console.log(plaintext); });
  */
+export async function decrypt(encryptedInput: string, password: string | BufferSource): Promise<string>
+/**
+ * Decrypts encrypted result from encrypt() using supplied password.  
+ * (c) enhanced from https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a
+ *
+ * @param   {string} encryptedInput - encrypted value to be decrypted.
+ * @param   {string} password - Password to use to decrypt encryptedInput.
+ * @param   {true} returnBuffer - Returns the ArrayBuffer directly without converting it to string.
+ * @returns {ArrayBuffer} Decrypted encryptedInput as raw ArrayBuffer.
+ *
+ * @example
+ *   const plaintext = await decrypt(ciphertext, 'pw');
+ *   decrypt(ciphertext, 'pw').then(function(plaintext) { console.log(plaintext); });
+ */
+export async function decrypt(encryptedInput: string, password: string | BufferSource, returnBuffer: true): Promise<ArrayBuffer>
 export async function decrypt(
-  ciphertext: string,
-  password: string,
-): Promise<string> {
-  const pwUtf8 = new TextEncoder().encode(password) // encode password as UTF-8
-  const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8) // hash the password
+  encryptedInput: string,
+  password: string | BufferSource,
+  returnBuffer = false,
+): Promise<string | ArrayBuffer> {
+  const pwHash = await crypto.subtle.digest('SHA-256', toBufferSource(password)) // hash the password
 
-  if (!ciphertext.includes(SEPARATOR)) {
-    throw new Error('Invalid ciphertext')
+  if (!encryptedInput.includes(SEPARATOR)) {
+    throw new Error('Invalid encryptedInput')
   }
-  const cipherSplitted = ciphertext.split(SEPARATOR)
+  const inputSplitted = encryptedInput.split(SEPARATOR)
 
-  if (cipherSplitted.length !== 2) {
-    throw new Error('Invalid ciphertext')
+  if (inputSplitted.length !== 2) {
+    throw new Error('Invalid encryptedInput')
   }
 
-  const ivB64 = cipherSplitted[0] // decode base64 iv
-  const ivUtf8 = base64ToUint8Array(ivB64) // iv as Uint8Array
+  const ivUtf8 = base64ToUint8Array(inputSplitted[0]) // iv as Uint8Array
 
   const alg = { name: 'AES-GCM', iv: ivUtf8 } // specify algorithm to use
 
@@ -74,13 +92,14 @@ export async function decrypt(
     'decrypt',
   ]) // generate key from pw
 
-  const ctB64 = cipherSplitted[1] // decode base64 iv
-  const ctUint8 = base64ToUint8Array(ctB64) // ciphertext as Uint8Array
+  const ctUint8 = base64ToUint8Array(inputSplitted[1]) // ciphertext as Uint8Array
 
   try {
     const ptBuffer = await crypto.subtle.decrypt(alg, key, ctUint8) // decrypt ciphertext using key
-    const ptStr = new TextDecoder().decode(ptBuffer) // plaintext from ArrayBuffer
-    return ptStr
+    if (returnBuffer)
+      return ptBuffer
+
+    return new TextDecoder().decode(ptBuffer) // plaintext from ArrayBuffer
   }
   catch (e) {
     console.error(e)

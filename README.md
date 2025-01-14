@@ -6,7 +6,9 @@
 [![Bundlejs][bundlejs-src]][bundlejs-href]
 [![jsDocs.io][jsDocs-src]][jsDocs-href]
 
-**@namesmt/aes-gcm** is a dead simple cross-platform AES-GCM encryption util package.  
+**@namesmt/aes-gcm** is a dead simple cross-platform AES-GCM encryption util package.
+
+Note: The result of `encrypt` function is the string of base64 encoded IV and ciphertext, concatenated with a separator.
 
 ## Features
 - [x] TypeScript ready!

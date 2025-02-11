@@ -2,7 +2,7 @@
   "name": "@namesmt/aes-gcm",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@9.15.5",
   "description": "Dead simple cross-platform AES-GCM encryption util package.",
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=20.13.1"
+    "node": ">=20.18.3"
   },
   "scripts": {
     "start": "NODE_ENV=dev tsx src/index.ts",
@@ -60,22 +60,22 @@
     "uint8array-extras": "^1.4.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.14.0",
+    "@antfu/eslint-config": "^3.16.0",
     "@namesmt/utils": "^0.5.9",
-    "@types/node": "^22.10.6",
-    "@vitest/coverage-v8": "^2.1.8",
-    "eslint": "^9.18.0",
-    "lint-staged": "^15.3.0",
+    "@types/node": "^22.13.1",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^9.20.0",
+    "lint-staged": "^15.4.3",
     "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "unbuild": "^3.3.1",
-    "vitest": "^2.1.8"
+    "vitest": "^2.1.9"
   },
   "pnpm": {
     "overrides": {
-      "hasown": "npm:@nolyfill/hasown@^1",
-      "is-core-module": "npm:@nolyfill/is-core-module@^1"
+      "hasown": "npm:@nolyfill/hasown@^1.0.29",
+      "is-core-module": "npm:@nolyfill/is-core-module@^1.0.39"
     }
   },
   "simple-git-hooks": {

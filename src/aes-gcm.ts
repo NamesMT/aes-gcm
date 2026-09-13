@@ -12,8 +12,8 @@ export const SEPARATOR = '|'
  * Encrypts content using AES-GCM with supplied password, for decryption with decrypt().  
  * (c) enhanced from https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a
  *
- * @param   {string} content - content to be encrypted.
- * @param   {string} password - Password to use to encrypt content.
+ * @param   {string | BufferSource} content - content to be encrypted.
+ * @param   {string | BufferSource} password - Password to use to encrypt content.
  * @returns {string} Encrypted result (iv and ciphertext concatenated).
  *
  * @example
@@ -46,7 +46,7 @@ export async function encrypt(
  * (c) enhanced from https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a
  *
  * @param   {string} encryptedInput - encrypted value to be decrypted.
- * @param   {string} password - Password to use to decrypt encryptedInput.
+ * @param   {string | BufferSource} password - Password to use to decrypt encryptedInput.
  * @returns {string} Decrypted plaintext.
  *
  * @example
@@ -59,7 +59,7 @@ export async function decrypt(encryptedInput: string, password: string | BufferS
  * (c) enhanced from https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a
  *
  * @param   {string} encryptedInput - encrypted value to be decrypted.
- * @param   {string} password - Password to use to decrypt encryptedInput.
+ * @param   {string | BufferSource} password - Password to use to decrypt encryptedInput.
  * @param   {true} returnBuffer - Returns the ArrayBuffer directly without converting it to string.
  * @returns {ArrayBuffer} Decrypted encryptedInput as raw ArrayBuffer.
  *

@@ -18,17 +18,17 @@ describe('basic usages', () => {
 
   it('should throw error if invalid encryptedInput is provided', async () => {
     const encrypted = await encrypt(plaintext, password)
-    expect(decrypt(`${encrypted}invalid`, password)).rejects.toThrowError('Invalid character')
-    expect(decrypt(`abc`, password)).rejects.toThrowError()
+    await expect(decrypt(`${encrypted}invalid`, password)).rejects.toThrowError('Invalid character')
+    await expect(decrypt(`abc`, password)).rejects.toThrowError()
   })
 
   it('should throw error if invalid encryptedInput is provided - contains SEPARATOR', async () => {
     const encrypted = await encrypt(plaintext, password)
-    expect(decrypt(`${encrypted}${SEPARATOR}invalid`, password)).rejects.toThrowError('Invalid encryptedInput')
+    await expect(decrypt(`${encrypted}${SEPARATOR}invalid`, password)).rejects.toThrowError('Invalid encryptedInput')
   })
 
   it('should throw error if invalid password is provided', async () => {
     const encrypted = await encrypt(plaintext, password)
-    expect(decrypt(encrypted, 'invalid')).rejects.toThrowError('Decrypt failed')
+    await expect(decrypt(encrypted, 'invalid')).rejects.toThrowError('Decrypt failed')
   })
 })

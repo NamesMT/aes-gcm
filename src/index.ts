@@ -1,4 +1,4 @@
 export {
-  encrypt,
   decrypt,
+  encrypt,
 } from '~/aes-gcm'

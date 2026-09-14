@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.0.1
+
+[compare changes](https://github.com/namesmt/aes-gcm/compare/v1.0.0...v1.0.1)
+
+### 🩹 Fixes
+
+- Use relative paths (drop deprecated `baseUrl`) ([9426a31](https://github.com/namesmt/aes-gcm/commit/9426a31))
+
+### 💅 Refactors
+
+- Fix lint, improve JSDoc accuracy, await async assertions ([e413d27](https://github.com/namesmt/aes-gcm/commit/e413d27))
+
+### 🏡 Chore
+
+- Migrate to pnpm 12 ([c04626a](https://github.com/namesmt/aes-gcm/commit/c04626a))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](https://github.com/NamesMT))
+
 ## v1.0.0
 
 [compare changes](https://github.com/namesmt/aes-gcm/compare/v0.1.3...v1.0.0)

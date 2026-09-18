@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/namesmt/aes-gcm/compare/v1.0.1...v1.1.0)
+
+### 📦 Build
+
+- ⚠️  Migrate to tsdown with native import maps ([b33dfbc](https://github.com/namesmt/aes-gcm/commit/b33dfbc))
+
+### 🤖 CI
+
+- Add CI workflow ([600058e](https://github.com/namesmt/aes-gcm/commit/600058e))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Migrate to tsdown with native import maps ([b33dfbc](https://github.com/namesmt/aes-gcm/commit/b33dfbc))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](https://github.com/NamesMT))
+
 ## v1.0.1
 
 [compare changes](https://github.com/namesmt/aes-gcm/compare/v1.0.0...v1.0.1)

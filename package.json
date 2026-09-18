@@ -1,7 +1,7 @@
 {
   "name": "@namesmt/aes-gcm",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "packageManager": "pnpm@12.4.1",
   "description": "Dead simple cross-platform AES-GCM encryption util package.",
   "author": "NamesMT <dangquoctrung123@gmail.com>",

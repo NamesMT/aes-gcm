@@ -1,15 +1,9 @@
-import { configDefaults, defineConfig } from 'vitest/config'
-
-import sharedConfig from './shared.config'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
     coverage: {
-      exclude: [...configDefaults.coverage.exclude!, 'shared.config.ts'],
+      exclude: ['tsdown.config.ts'],
     },
   },
-  resolve: {
-    alias: sharedConfig.alias,
-  },
-  ...sharedConfig,
 })

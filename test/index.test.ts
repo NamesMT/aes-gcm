@@ -1,6 +1,6 @@
+import { SEPARATOR } from '#src/aes-gcm.js'
+import { decrypt, encrypt } from '#src/index.js'
 import { describe, expect, it } from 'vitest'
-import { SEPARATOR } from '~/aes-gcm'
-import { decrypt, encrypt } from '~/index'
 
 describe('basic usages', () => {
   const plaintext = 'Hello, world!'

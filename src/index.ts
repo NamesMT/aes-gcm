@@ -1,4 +1,5 @@
 export {
   decrypt,
   encrypt,
-} from '~/aes-gcm'
+  SEPARATOR,
+} from '#src/aes-gcm.js'

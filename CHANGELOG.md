@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v1.1.1
+
+[compare changes](https://github.com/NamesMT/aes-gcm/compare/v1.1.0...v1.1.1)
+
+### 🩹 Fixes
+
+- Exclude playground from tsconfig typecheck ([ab2b73a](https://github.com/NamesMT/aes-gcm/commit/ab2b73a))
+- Publish npm metadata and correct repository URL casing ([2053921](https://github.com/NamesMT/aes-gcm/commit/2053921))
+- Publish npm metadata and correct repository URL casing ([3ee28e9](https://github.com/NamesMT/aes-gcm/commit/3ee28e9))
+
+### 🏡 Chore
+
+- **devcontainer:** Migrate from Alpine (musl) to Arch (glibc) image ([3618646](https://github.com/NamesMT/aes-gcm/commit/3618646))
+- **devcontainer:** Bootstrap pnpm via corepack when missing ([b0d582d](https://github.com/NamesMT/aes-gcm/commit/b0d582d))
+
+### 🤖 CI
+
+- **release:** Dispatch releases by hand and add an AGENTS.md ([cfe7694](https://github.com/NamesMT/aes-gcm/commit/cfe7694))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](https://github.com/NamesMT))
+
 ## v1.1.0
 
 [compare changes](https://github.com/namesmt/aes-gcm/compare/v1.0.1...v1.1.0)

@@ -7,12 +7,12 @@
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/namesmt",
-  "homepage": "https://github.com/namesmt/aes-gcm#readme",
+  "homepage": "https://github.com/NamesMT/aes-gcm#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namesmt/aes-gcm.git"
+    "url": "git+https://github.com/NamesMT/aes-gcm.git"
   },
-  "bugs": "https://github.com/namesmt/aes-gcm/issues",
+  "bugs": "https://github.com/NamesMT/aes-gcm/issues",
   "keywords": [
     "AES",
     "GCM",
@@ -21,7 +21,13 @@
     "encrypt",
     "encryption",
     "decrypt",
-    "decryption"
+    "decryption",
+    "webcrypto",
+    "isomorphic",
+    "cross-platform",
+    "cloudflare-workers",
+    "esm",
+    "typescript"
   ],
   "sideEffects": false,
   "imports": {

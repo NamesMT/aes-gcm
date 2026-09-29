@@ -73,8 +73,8 @@ Publishing** for `namesmt/aes-gcm` with the workflow filename `release.yml`.
 [npm-downloads-href]: https://npmjs.com/package/@namesmt/aes-gcm
 [codecov-src]: https://img.shields.io/codecov/c/gh/namesmt/aes-gcm/main?labelColor=18181B&color=F0DB4F
 [codecov-href]: https://codecov.io/gh/namesmt/aes-gcm
-[license-src]: https://img.shields.io/github/license/namesmt/aes-gcm.svg?labelColor=18181B&color=F0DB4F
-[license-href]: https://github.com/namesmt/aes-gcm/blob/main/LICENSE
+[license-src]: https://img.shields.io/github/license/NamesMT/aes-gcm.svg?labelColor=18181B&color=F0DB4F
+[license-href]: https://github.com/NamesMT/aes-gcm/blob/main/LICENSE
 [bundlejs-src]: https://img.shields.io/bundlejs/size/@namesmt/aes-gcm?labelColor=18181B&color=F0DB4F
 [bundlejs-href]: https://bundlejs.com/?q=@namesmt/aes-gcm
 [jsDocs-src]: https://img.shields.io/badge/Check_out-jsDocs.io---?labelColor=18181B&color=F0DB4F

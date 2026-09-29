@@ -47,3 +47,6 @@ pnpm run dev              # tsx watch src/index.ts (watch alias); start = same w
 - `pnpm run check` is the non-watching gate (`vitest run --coverage`); `pnpm test` is watch locally and runs once in CI.
 - `dist/` and `coverage/` are gitignored, so changelogen's `--clean` (which fails on a dirty `git status --porcelain`) is not tripped by build or coverage output.
 - `package.json` declares Node >= 22 and CI tests on 22.x, but `release.yml` uses Node 24 because npm trusted publishing needs npm >= 11.5.1.
+- `decrypt()` throws `Invalid encryptedInput` unless the input is exactly two `SEPARATOR` (`|`) parts, and rethrows any Web Crypto failure as `Decrypt failed` after `console.error`.
+- `decrypt()` takes a third `returnBuffer` argument: pass `true` to get the raw `ArrayBuffer` (no `TextDecoder` step) instead of a string.
+- `repository.url` must keep the canonical `NamesMT` casing — with `--provenance`, npm fails the publish when the URL owner does not match the GitHub owner.

@@ -56,7 +56,7 @@ Locally, `pnpm run release:check <version>` validates a version against `package
 
 One-time setup: publish the package once by hand (npm only offers a trusted publisher for a
 package that already exists), then on npmjs.com enable **Settings → Publishing access → Trusted
-Publishing** for `namesmt/aes-gcm` with the workflow filename `release.yml`.
+Publishing** for `NamesMT/aes-gcm` with the workflow filename `release.yml`.
 
 ## Roadmap
 

@@ -50,7 +50,7 @@ Prune verbose, keep correctness — code, comments, docs. A comment only for non
 
 ## User-facing docs
 
-`README.md` is the only one (no `docs/` here): concise first read, depth behind `<details>`, visuals for skimmers. Docs ship with the change, in the same commit.
+`README.md` is the only one (no `docs/` here). Keep it a **concise first read**; put depth in `<details>` spoilers and add visuals where they help. Docs ship with the change, in the same commit.
 
 ## Releasing
 

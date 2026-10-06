@@ -35,6 +35,20 @@ pnpm run dev              # tsx watch src/index.ts (watch alias); start = same w
 - Internal imports use the `#src/*` alias from `package.json#imports`, with a `.js` suffix on `.ts` files.
 - The trailing double space in the JSDoc above `encrypt`/`decrypt` is a markdown line break; `eslint.config.js` allows trailing spaces in comments.
 
+## Docs
+
+Three tiers, so a reader loads only what the task needs:
+
+1. **`AGENTS.md`** (this file) — orientation and the rules that prevent defects. Read every session.
+2. **`.agentDocs/`** — depth that would bloat this file: module rationale, traps with their causes,
+   compatibility rules. Read on demand.
+3. **`README.md` / `docs/`** — for a person using the package, not for an agent.
+
+**There is no `.agentDocs/` here yet and none is needed at this size.** Create one when a section
+above outgrows a screen or two: move the *reasoning* out and keep the *rule* here with a pointer to
+it — nobody reads a file they do not open. Each document opens with a one-line scope, and this file
+links it.
+
 ## How to work here
 
 - Check who calls it before you change it; when impact is unclear, say so — don't guess.
@@ -42,7 +56,7 @@ pnpm run dev              # tsx watch src/index.ts (watch alias); start = same w
 - Report the risk, not only the change: correctness, security, operational, integration.
 - **Fix the root cause, not the instance** — a copied helper, a rule stated twice, a guard bypassed by a second path is one class: one implementation, one guard.
 - Verify before claiming, and say which direction; a passing test is not evidence it pinned anything.
-- No `.agentDocs/` here: if recall is missing, read this file, `test/` and `git log` first.
+- If recall of this repo is missing, read this file, `test/` and `git log` first (see `## Docs`).
 
 ## Conciseness (applies everywhere)
 

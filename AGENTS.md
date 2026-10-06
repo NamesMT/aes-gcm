@@ -4,6 +4,20 @@
 async functions (`encrypt`, `decrypt`) over the Web Crypto API, ESM only, Node >= 22, built with
 [tsdown](https://github.com/rolldown/tsdown) and tested with [Vitest](https://vitest.dev).
 
+## Docs
+
+Three tiers, so a reader loads only what the task needs:
+
+1. **`AGENTS.md`** (this file) — orientation and the rules that prevent defects. Read every session.
+2. **`.agentDocs/`** — depth that would bloat this file: module rationale, traps with their causes,
+   compatibility rules. Read on demand.
+3. **`README.md` / `docs/`** — for a person using the package, not for an agent.
+
+**There is no `.agentDocs/` here yet and none is needed at this size.** Create one when a section
+above outgrows a screen or two: move the *reasoning* out and keep the *rule* here with a pointer to
+it — nobody reads a file they do not open. Each document opens with a one-line scope, and this file
+links it.
+
 ## Commands
 
 ```sh
@@ -35,30 +49,16 @@ pnpm run dev              # tsx watch src/index.ts (watch alias); start = same w
 - Internal imports use the `#src/*` alias from `package.json#imports`, with a `.js` suffix on `.ts` files.
 - The trailing double space in the JSDoc above `encrypt`/`decrypt` is a markdown line break; `eslint.config.js` allows trailing spaces in comments.
 
-## Docs
-
-Three tiers, so a reader loads only what the task needs:
-
-1. **`AGENTS.md`** (this file) — orientation and the rules that prevent defects. Read every session.
-2. **`.agentDocs/`** — depth that would bloat this file: module rationale, traps with their causes,
-   compatibility rules. Read on demand.
-3. **`README.md` / `docs/`** — for a person using the package, not for an agent.
-
-**There is no `.agentDocs/` here yet and none is needed at this size.** Create one when a section
-above outgrows a screen or two: move the *reasoning* out and keep the *rule* here with a pointer to
-it — nobody reads a file they do not open. Each document opens with a one-line scope, and this file
-links it.
-
 ## How to work here
 
 - Check who calls it before you change it; when impact is unclear, say so — don't guess.
 - Never overwrite or delete a large section you haven't understood; don't invent requirements — surface what's needed.
 - Report the risk, not only the change: correctness, security, operational, integration.
 - **Fix the root cause, not the instance** — a copied helper, a rule stated twice, a guard bypassed by a second path is one class: one implementation, one guard.
-- Verify before claiming, and say which direction; a passing test is not evidence it pinned anything.
+- **Verify before claiming, and say what you checked.** A green test proves only what it asserts — **break the thing it guards and watch it fail.** If it still passes, either the test is decoration or a different guard is running; find out which. Where a stub cannot answer the question, drive the real thing. Mark anything unverified as unverified.
 - If recall of this repo is missing, read this file, `test/` and `git log` first (see `## Docs`).
 
-## Conciseness (applies everywhere)
+## Conciseness
 
 Prune verbose, keep correctness — code, comments, docs. A comment only for non-obvious intent; one idea per sentence; cut what wouldn't change what a reader does; keep the rule, not the story `git log` holds. Never drop a caveat.
 

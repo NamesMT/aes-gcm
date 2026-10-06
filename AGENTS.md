@@ -35,6 +35,23 @@ pnpm run dev              # tsx watch src/index.ts (watch alias); start = same w
 - Internal imports use the `#src/*` alias from `package.json#imports`, with a `.js` suffix on `.ts` files.
 - The trailing double space in the JSDoc above `encrypt`/`decrypt` is a markdown line break; `eslint.config.js` allows trailing spaces in comments.
 
+## How to work here
+
+- Check who calls it before you change it; when impact is unclear, say so — don't guess.
+- Never overwrite or delete a large section you haven't understood; don't invent requirements — surface what's needed.
+- Report the risk, not only the change: correctness, security, operational, integration.
+- **Fix the root cause, not the instance** — a copied helper, a rule stated twice, a guard bypassed by a second path is one class: one implementation, one guard.
+- Verify before claiming, and say which direction; a passing test is not evidence it pinned anything.
+- No `.agentDocs/` here: if recall is missing, read this file, `test/` and `git log` first.
+
+## Conciseness (applies everywhere)
+
+Prune verbose, keep correctness — code, comments, docs. A comment only for non-obvious intent; one idea per sentence; cut what wouldn't change what a reader does; keep the rule, not the story `git log` holds. Never drop a caveat.
+
+## User-facing docs
+
+`README.md` is the only one (no `docs/` here): concise first read, depth behind `<details>`, visuals for skimmers. Docs ship with the change, in the same commit.
+
 ## Releasing
 
 - Manual and version-first: dispatch **Actions → Release → Run workflow** with the version; `release.yml` is the only publish path, so a pushed tag publishes nothing.

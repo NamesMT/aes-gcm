@@ -60,7 +60,7 @@ pnpm run dev              # tsx watch src/index.ts (watch alias); start = same w
 
 ## Conciseness
 
-Prune verbose, keep correctness — code, comments, docs. A comment only for non-obvious intent; one idea per sentence; cut what wouldn't change what a reader does; keep the rule, not the story `git log` holds. Never drop a caveat.
+Prune verbose, keep correctness — code, comments, docs. A comment only for non-obvious intent and short — a block arguing for its own change is a commit message; one idea per sentence; cut what wouldn't change what a reader does; keep the rule, not the story `git log` holds. Never drop a caveat.
 
 ## User-facing docs
 
